@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Android6.0运行时权限管理]]></title>
+    <url>%2F2018%2F05%2F26%2FAndroid6-0%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[Android6.0动态权限最简单的解决方法 前言：动态权限管理是Android6.0（B&gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&gt;要的权限，防止滥用。这些权限一般分为三种： （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。 原声的动态权限管理很麻烦，代码也不够优雅，因此就有很多的动态权限管理库，比较出名一点的有： EasyPermissions RuntimePermission RxPermissions 相较于其他的权限管理库，RxPermissions的代码最为简洁，逻辑也更加清晰。 ##首先引入RxPermissions： Github地址 关键代码如下： 12345678910111213141516171819202122232425262728293031RxPermissions rxPermissions = new RxPermissions(this); rxPermissions .requestEach(Manifest.permission.READ_PHONE_STATE,//读取电话 Manifest.permission.ACCESS_COARSE_LOCATION)//获取位置信息 .subscribe(permission -&gt; &#123; if (permission.granted) &#123; Log.d("rxPermissions", permission.name + "同意了"); switch (permission.name) &#123; case Manifest.permission.READ_PHONE_STATE: break; case Manifest.permission.ACCESS_COARSE_LOCATION: break; &#125; &#125; else if (permission.shouldShowRequestPermissionRationale) &#123; Log.d("rxPermissions", permission.name + "拒绝了"); switch (permission.name) &#123; case Manifest.permission.READ_PHONE_STATE: break; case Manifest.permission.ACCESS_COARSE_LOCATION: break; &#125; &#125; else &#123; switch (permission.name) &#123; case Manifest.permission.READ_PHONE_STATE: break; case Manifest.permission.ACCESS_COARSE_LOCATION: break; &#125; Log.d("rxPermissions", permission.name + "拒绝并不再提示了"); &#125; &#125;); ##运行结果：]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[第一篇博客]]></title>
+    <url>%2F2018%2F05%2F25%2F%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[历经千辛万苦终于搭建好了我自己的博客网站，作为一个爱折腾的技术宅来说内心的满足感简直爆棚。希望接下来能把自己工作中的心得感悟都记录下来，方便以后查看。]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F05%2F24%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <tags>
+        <tag>测试</tag>
+        <tag>HelloWorld</tag>
+      </tags>
+  </entry>
+</search>
