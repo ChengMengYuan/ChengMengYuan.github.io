@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="Android开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="程梦远">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Android6.0动态权限最简单的解决方法 前言：动态权限管理是Android6.0（B&amp;gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&amp;gt;要的权限，防止滥用。这些权限一般分为三种：  （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android6.0运行时权限管理">
+<meta property="og:url" content="http://yoursite.com/2018/05/26/Android6-0运行时权限管理/index.html">
 <meta property="og:site_name" content="程梦远">
-<meta property="og:description" content="Android开发">
+<meta property="og:description" content="Android6.0动态权限最简单的解决方法 前言：动态权限管理是Android6.0（B&amp;gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&amp;gt;要的权限，防止滥用。这些权限一般分为三种：  （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/44087558.jpg">
+<meta property="og:image" content="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/37849337.jpg">
+<meta property="og:updated_time" content="2018-05-26T07:15:14.586Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="程梦远">
-<meta name="twitter:description" content="Android开发">
+<meta name="twitter:title" content="Android6.0运行时权限管理">
+<meta name="twitter:description" content="Android6.0动态权限最简单的解决方法 前言：动态权限管理是Android6.0（B&amp;gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&amp;gt;要的权限，防止滥用。这些权限一般分为三种：  （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。">
+<meta name="twitter:image" content="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/44087558.jpg">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/26/Android6-0运行时权限管理/"/>
 
 
 
 
 
-  <title>程梦远</title>
+  <title>Android6.0运行时权限管理 | 程梦远</title>
   
 
 
@@ -143,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,9 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -249,9 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/26/Android6-0运行时权限管理/" itemprop="url">Android6.0运行时权限管理</a></h1>
+          <h1 class="post-title" itemprop="name headline">Android6.0运行时权限管理</h1>
         
 
         <div class="post-meta">
@@ -346,20 +347,31 @@
       
 
       
-        
-          <h1 id="Android6-0动态权限最简单的解决方法"><a href="#Android6-0动态权限最简单的解决方法" class="headerlink" title="Android6.0动态权限最简单的解决方法"></a>Android6.0动态权限最简单的解决方法</h1><hr>
+        <h1 id="Android6-0动态权限最简单的解决方法"><a href="#Android6-0动态权限最简单的解决方法" class="headerlink" title="Android6.0动态权限最简单的解决方法"></a>Android6.0动态权限最简单的解决方法</h1><hr>
 <p>前言：动态权限管理是Android6.0（B&gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&gt;要的权限，防止滥用。这些权限一般分为三种：</p>
 <blockquote>
 <p>（1）普通权限：直接manifest清单文件中写上注册就行了<br>（2）危险权限：需要动态申请<br>（3）特殊权限：一般用不上。</p>
 </blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/26/Android6-0运行时权限管理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a id="more"></a>
+<p>原声的动态权限管理很麻烦，代码也不够优雅，因此就有很多的动态权限管理库，比较出名一点的有：</p>
+<ol>
+<li>EasyPermissions</li>
+<li>RuntimePermission</li>
+<li>RxPermissions</li>
+</ol>
+<p>相较于其他的权限管理库，RxPermissions的代码最为简洁，逻辑也更加清晰。</p>
+<hr>
+<p>##首先引入RxPermissions：</p>
+<blockquote>
+<p><a href="https://github.com/tbruyelle/RxPermissions" target="_blank" rel="noopener">Github地址</a></p>
+</blockquote>
+<hr>
+<p>关键代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">RxPermissions rxPermissions = <span class="keyword">new</span> RxPermissions(<span class="keyword">this</span>);</span><br><span class="line">        rxPermissions</span><br><span class="line">                .requestEach(Manifest.permission.READ_PHONE_STATE,<span class="comment">//读取电话</span></span><br><span class="line">                        Manifest.permission.ACCESS_COARSE_LOCATION)<span class="comment">//获取位置信息</span></span><br><span class="line">                .subscribe(permission -&gt; &#123;</span><br><span class="line">                    <span class="keyword">if</span> (permission.granted) &#123;</span><br><span class="line">                        Log.d(<span class="string">"rxPermissions"</span>, permission.name + <span class="string">"同意了"</span>);</span><br><span class="line">                        <span class="keyword">switch</span> (permission.name) &#123;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.READ_PHONE_STATE:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.ACCESS_COARSE_LOCATION:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (permission.shouldShowRequestPermissionRationale) &#123;</span><br><span class="line">                        Log.d(<span class="string">"rxPermissions"</span>, permission.name + <span class="string">"拒绝了"</span>);</span><br><span class="line">                        <span class="keyword">switch</span> (permission.name) &#123;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.READ_PHONE_STATE:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.ACCESS_COARSE_LOCATION:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">switch</span> (permission.name) &#123;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.READ_PHONE_STATE:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.ACCESS_COARSE_LOCATION:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        Log.d(<span class="string">"rxPermissions"</span>, permission.name + <span class="string">"拒绝并不再提示了"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>##运行结果：<br><img src="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/44087558.jpg" alt=""></p>
+<p><img src="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/37849337.jpg" alt=""></p>
+
       
     </div>
     
@@ -368,193 +380,61 @@
 
 
     
+        
+
+    
 
 
     
 
     
 
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    程梦远
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2018/05/26/Android6-0运行时权限管理/" title="Android6.0运行时权限管理">http://yoursite.com/2018/05/26/Android6-0运行时权限管理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/第一篇博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="程梦远">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="程梦远">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/25/第一篇博客/" itemprop="url">第一篇博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T10:57:02+08:00">
-                2018-05-25
-              </time>
+              <a href="/2018/05/25/第一篇博客/" rel="next" title="第一篇博客">
+                <i class="fa fa-chevron-left"></i> 第一篇博客
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/25/第一篇博客/" 
-             class="leancloud_visitors" 
-             data-flag-title="第一篇博客">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  71
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p><img src="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-25/74570666.jpg" alt=""></p>
-<h2 id="历经千辛万苦终于搭建好了我自己的博客网站，作为一个爱折腾的技术宅来说内心的满足感简直爆棚。希望接下来能把自己工作中的心得感悟都记录下来，方便以后查看。"><a href="#历经千辛万苦终于搭建好了我自己的博客网站，作为一个爱折腾的技术宅来说内心的满足感简直爆棚。希望接下来能把自己工作中的心得感悟都记录下来，方便以后查看。" class="headerlink" title="历经千辛万苦终于搭建好了我自己的博客网站，作为一个爱折腾的技术宅来说内心的满足感简直爆棚。希望接下来能把自己工作中的心得感悟都记录下来，方便以后查看。"></a>历经千辛万苦终于搭建好了我自己的博客网站，作为一个爱折腾的技术宅来说内心的满足感简直爆棚。希望接下来能把自己工作中的心得感悟都记录下来，方便以后查看。</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -564,185 +444,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="程梦远">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="程梦远">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/24/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T14:03:28+08:00">
-                2018-05-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/24/hello-world/" 
-             class="leancloud_visitors" 
-             data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  78
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/24/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -750,6 +456,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -770,8 +480,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -847,6 +566,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android6-0动态权限最简单的解决方法"><span class="nav-number">1.</span> <span class="nav-text">Android6.0动态权限最简单的解决方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1006,6 +741,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
