@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="Android6.0动态权限最简单的解决方法 前言：动态权限管理是Android6.0（B&amp;gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&amp;gt;要的权限，防止滥用。这些权限一般分为三种：  （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。">
+<meta name="description" content="Android6.0动态权限最简单的解决方法 前言动态权限管理是Android6.0（B&amp;gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&amp;gt;要的权限，防止滥用。这些权限一般分为三种：  （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。">
 <meta name="keywords" content="权限管理,Android6.0,适配">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android6.0运行时权限管理">
 <meta property="og:url" content="http://chengmengyuan.github.io/2018/05/26/Android6-0运行时权限管理/index.html">
 <meta property="og:site_name" content="程梦远">
-<meta property="og:description" content="Android6.0动态权限最简单的解决方法 前言：动态权限管理是Android6.0（B&amp;gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&amp;gt;要的权限，防止滥用。这些权限一般分为三种：  （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。">
+<meta property="og:description" content="Android6.0动态权限最简单的解决方法 前言动态权限管理是Android6.0（B&amp;gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&amp;gt;要的权限，防止滥用。这些权限一般分为三种：  （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/44087558.jpg">
 <meta property="og:image" content="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/37849337.jpg">
-<meta property="og:updated_time" content="2018-05-28T09:09:36.923Z">
+<meta property="og:updated_time" content="2018-05-31T03:46:15.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android6.0运行时权限管理">
-<meta name="twitter:description" content="Android6.0动态权限最简单的解决方法 前言：动态权限管理是Android6.0（B&amp;gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&amp;gt;要的权限，防止滥用。这些权限一般分为三种：  （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。">
+<meta name="twitter:description" content="Android6.0动态权限最简单的解决方法 前言动态权限管理是Android6.0（B&amp;gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&amp;gt;要的权限，防止滥用。这些权限一般分为三种：  （1）普通权限：直接manifest清单文件中写上注册就行了（2）危险权限：需要动态申请（3）特殊权限：一般用不上。">
 <meta name="twitter:image" content="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/44087558.jpg">
 
 
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  324
+                  320
                 </span>
               
 
@@ -412,8 +412,8 @@
       
 
       
-        <h1 id="Android6-0动态权限最简单的解决方法"><a href="#Android6-0动态权限最简单的解决方法" class="headerlink" title="Android6.0动态权限最简单的解决方法"></a>Android6.0动态权限最简单的解决方法</h1><hr>
-<p>前言：动态权限管理是Android6.0（B&gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&gt;要的权限，防止滥用。这些权限一般分为三种：</p>
+        <h2 id="Android6-0动态权限最简单的解决方法"><a href="#Android6-0动态权限最简单的解决方法" class="headerlink" title="Android6.0动态权限最简单的解决方法"></a>Android6.0动态权限最简单的解决方法</h2><hr>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>动态权限管理是Android6.0（B&gt;uild.VERSION_CODES.M =Api23）推出的，提醒用户当前APP所需&gt;要的权限，防止滥用。这些权限一般分为三种：</p>
 <blockquote>
 <p>（1）普通权限：直接manifest清单文件中写上注册就行了<br>（2）危险权限：需要动态申请<br>（3）特殊权限：一般用不上。</p>
 </blockquote>
@@ -426,15 +426,13 @@
 </ol>
 <p>相较于其他的权限管理库，RxPermissions的代码最为简洁，逻辑也更加清晰。</p>
 <hr>
-<p>##首先引入RxPermissions：</p>
-<blockquote>
+<h3 id="引入RxPermissions"><a href="#引入RxPermissions" class="headerlink" title="引入RxPermissions"></a>引入RxPermissions</h3><blockquote>
 <p><a href="https://github.com/tbruyelle/RxPermissions" target="_blank" rel="noopener">Github地址</a></p>
 </blockquote>
 <hr>
-<p>关键代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">RxPermissions rxPermissions = <span class="keyword">new</span> RxPermissions(<span class="keyword">this</span>);</span><br><span class="line">        rxPermissions</span><br><span class="line">                .requestEach(Manifest.permission.READ_PHONE_STATE,<span class="comment">//读取电话</span></span><br><span class="line">                        Manifest.permission.ACCESS_COARSE_LOCATION)<span class="comment">//获取位置信息</span></span><br><span class="line">                .subscribe(permission -&gt; &#123;</span><br><span class="line">                    <span class="keyword">if</span> (permission.granted) &#123;</span><br><span class="line">                        Log.d(<span class="string">"rxPermissions"</span>, permission.name + <span class="string">"同意了"</span>);</span><br><span class="line">                        <span class="keyword">switch</span> (permission.name) &#123;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.READ_PHONE_STATE:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.ACCESS_COARSE_LOCATION:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (permission.shouldShowRequestPermissionRationale) &#123;</span><br><span class="line">                        Log.d(<span class="string">"rxPermissions"</span>, permission.name + <span class="string">"拒绝了"</span>);</span><br><span class="line">                        <span class="keyword">switch</span> (permission.name) &#123;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.READ_PHONE_STATE:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.ACCESS_COARSE_LOCATION:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">switch</span> (permission.name) &#123;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.READ_PHONE_STATE:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.ACCESS_COARSE_LOCATION:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        Log.d(<span class="string">"rxPermissions"</span>, permission.name + <span class="string">"拒绝并不再提示了"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">RxPermissions rxPermissions = <span class="keyword">new</span> RxPermissions(<span class="keyword">this</span>);</span><br><span class="line">        rxPermissions</span><br><span class="line">                .requestEach(Manifest.permission.READ_PHONE_STATE,<span class="comment">//读取电话</span></span><br><span class="line">                        Manifest.permission.ACCESS_COARSE_LOCATION)<span class="comment">//获取位置信息</span></span><br><span class="line">                .subscribe(permission -&gt; &#123;</span><br><span class="line">                    <span class="keyword">if</span> (permission.granted) &#123;</span><br><span class="line">                        Log.d(<span class="string">"rxPermissions"</span>, permission.name + <span class="string">"同意了"</span>);</span><br><span class="line">                        <span class="keyword">switch</span> (permission.name) &#123;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.READ_PHONE_STATE:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.ACCESS_COARSE_LOCATION:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (permission.shouldShowRequestPermissionRationale) &#123;</span><br><span class="line">                        Log.d(<span class="string">"rxPermissions"</span>, permission.name + <span class="string">"拒绝了"</span>);</span><br><span class="line">                        <span class="keyword">switch</span> (permission.name) &#123;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.READ_PHONE_STATE:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.ACCESS_COARSE_LOCATION:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">switch</span> (permission.name) &#123;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.READ_PHONE_STATE:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            <span class="keyword">case</span> Manifest.permission.ACCESS_COARSE_LOCATION:</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        Log.d(<span class="string">"rxPermissions"</span>, permission.name + <span class="string">"拒绝并不再提示了"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure>
 <hr>
-<p>##运行结果：<br><img src="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/44087558.jpg" width="300" height="200" alt="图片名称" align="center"><br><img src="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/37849337.jpg" width="300" height="200" alt="图片名称" align="center"></p>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/44087558.jpg" width="300" height="200" alt="图片名称" align="center"><br><img src="http://blog-chengmengyuan-img.oss-cn-beijing.aliyuncs.com/18-5-26/37849337.jpg" width="300" height="200" alt="图片名称" align="center"></p>
 
       
     </div>
@@ -503,6 +501,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/29/Android唤起手机地图-高德地图-百度地图-腾讯地图，腾讯地图网页/" rel="prev" title="Android唤起手机地图(高德地图,百度地图,腾讯地图，腾讯地图网页)">
+                Android唤起手机地图(高德地图,百度地图,腾讯地图，腾讯地图网页) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -612,7 +614,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -625,7 +627,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -699,7 +701,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android6-0动态权限最简单的解决方法"><span class="nav-number">1.</span> <span class="nav-text">Android6.0动态权限最简单的解决方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android6-0动态权限最简单的解决方法"><span class="nav-number">1.</span> <span class="nav-text">Android6.0动态权限最简单的解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入RxPermissions"><span class="nav-number">1.2.</span> <span class="nav-text">引入RxPermissions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键代码"><span class="nav-number">1.3.</span> <span class="nav-text">关键代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行结果"><span class="nav-number">2.</span> <span class="nav-text">运行结果</span></a></li></ol></div>
             
 
           </div>
@@ -752,7 +754,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共473字</span>
+  <span class="post-count">博客全站共1.5k字</span>
 </div>
         
 
